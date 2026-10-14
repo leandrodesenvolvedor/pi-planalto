@@ -15,7 +15,7 @@ function handleLogin(event) {
   
   if (cpf) {
     isLoggedIn = true;
-    document.getElementById('userNameDisplay').innerText = 'Usuário Conectado';
+    switchPage('recarga');
     document.getElementById('loginView').style.display = 'none';
     document.getElementById('dashboardView').style.display = 'grid';
   }
