@@ -7,6 +7,27 @@ function switchPage(pageId, element) {
 
   document.getElementById(pageId).classList.add('active');
   if (element) element.classList.add('active');
+  closeMenu();
+}
+
+function toggleMenu() {
+  const navigation = document.getElementById('mainNavigation');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+
+  document.body.classList.add('mobile-content-visible');
+  navigation.classList.toggle('open', !isExpanded);
+  menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+  menuToggle.setAttribute('aria-label', isExpanded ? 'Abrir menu de navegação' : 'Fechar menu de navegação');
+}
+
+function closeMenu() {
+  const navigation = document.getElementById('mainNavigation');
+  const menuToggle = document.querySelector('.menu-toggle');
+
+  navigation.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.setAttribute('aria-label', 'Abrir menu de navegação');
 }
 
 function handleLogin(event) {

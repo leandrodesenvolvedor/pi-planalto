@@ -6,13 +6,22 @@
 }
 
 body {
+  min-height: 100vh;
   background-color: #f4f7f6;
   color: #333;
 }
 
+  body:has(#home.active) {
+    background: #f4f7f6 url('img/img-1.png') center / cover fixed no-repeat;
+  }
+
+  body:has(#home.active) header {
+    background-color: transparent;
+  }
+
 /* Header & Navigation */
 header {
-  background-color: rgba(11, 151, 116, 0.86);;
+  background-color: #09514f;
   color: #ffffff;
   padding: 5rem 5%;
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
@@ -45,12 +54,23 @@ header {
   display: inline-block;
 }
 
+.topo {
+  margin-top: 24px;
+}
+
+.topo span {
+  margin-left: -34px;
+}
+
 h1 {
   margin-left: -80px;
   margin-top: 1px;
   font-size: 1.2em;
-  color: #bebcbc;
-  opacity: 0.5;
+  color: #fff;
+}
+
+h2.green {
+  color: #0bf2e2;
 }
 
 svg {
@@ -70,7 +90,6 @@ nav a {
   color: #ffffff;
   text-decoration: none;
   font-size: 0.95rem;
-  opacity: 0.85;
   transition: opacity 0.2s, border-bottom 0.2s;
   padding-bottom: 4px;
 }
@@ -206,7 +225,7 @@ main {
 }
 
 footer {
-  background-color:#bebcbc;
+  background-color:transparent;
   color: #ffffff;
   padding: 5rem 5% 5rem  15%;
   box-shadow: 0 2px 10px rgba(224, 212, 212, 0.914);
@@ -322,4 +341,198 @@ footer p {
   background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
+}
+
+#faleConosco p {
+  margin-bottom: 1.5rem;
+}
+#faleConosco h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  header {
+    padding: 1rem 5%;
+  }
+
+  .header-container {
+    position: relative;
+  }
+
+  .logo {
+    gap: 8px;
+    margin-top: 0;
+    min-width: 0;
+  }
+
+  .logo-box {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+  }
+
+  .logo svg {
+    margin-top: 0;
+  }
+
+  .topo {
+    margin-top: 0;
+  }
+
+  .topo span,
+  h1 {
+    margin-left: 0;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 6px;
+    background: #09514f;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: #fff;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: -5.56%;
+    left: -5.56%;
+    z-index: 10;
+    padding: 0 5%;
+    background: #09514f;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+  }
+
+  nav.open {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  nav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  nav li:last-child {
+    border-bottom: 0;
+  }
+
+  nav a {
+    display: block;
+    padding: 14px 4px;
+  }
+
+  main {
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+  }
+
+  .banner-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dashboard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .auth-card,
+  .recharge-panel,
+  .balance-card,
+  .card {
+    padding: 1.5rem;
+  }
+
+  .preset-values {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .balance-amount {
+    font-size: 2rem;
+  }
+
+  footer {
+    padding: 2.5rem 1rem;
+  }
+
+  footer p {
+    padding: 1.5rem 0 0;
+  }
+
+  #faleConosco h3,
+  #faleConosco p,
+  #faleConosco span {
+    overflow-wrap: anywhere;
+  }
+
+  body:has(#home.active) {
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+  }
+
+  body:not(.mobile-content-visible) .header-container {
+    justify-content: flex-end;
+  }
+
+  body:not(.mobile-content-visible) .logo,
+  body:not(.mobile-content-visible) nav,
+  body:not(.mobile-content-visible) main,
+  body:not(.mobile-content-visible) footer {
+    display: none;
+  }
+  
+}
+
+@media (max-width: 400px) {
+  header {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .logo-box {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  h1 {
+    font-size: 0.9rem;
+  }
+
+  .topo span {
+    font-size: 0.75rem;
+  }
+
+  nav {
+    right: -1rem;
+    left: -1rem;
+  }
 }

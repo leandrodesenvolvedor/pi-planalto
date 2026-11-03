@@ -14,15 +14,23 @@
         <span class="logo-box">
             <svg preserveAspectRatio="xMidYMid meet" data-bbox="0 0 200 200"  version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="presentation" aria-hidden="true"><g><path d="M196,52V4H4v192h192v-48h4v52H0V0h200v52H196z"></path></g></svg>
         </span>
-        <h1>Expresso Planalto Pouso Alegre</h1>
+        <div class="topo">
+        <h1>Expresso Planalto</h1>
+        <span>Pouso Alegre</span>
+        </div>
       </div>
-      <nav>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-controls="mainNavigation" aria-expanded="false" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="mainNavigation">
         <ul>
           <li><a href="#" class="nav-link active" onclick="switchPage('home', this)">Home</a></li>
-          <li><a href="#" class="nav-link" onclick="switchPage('horarios', this)">Quadro de Horário</a></li>
-          <li><a href="#" class="nav-link" onclick="switchPage('passes', this)">Informações de Passes</a></li>
-          <li><a href="#" class="nav-link" onclick="switchPage('recarga', this)">Recarga de Passes</a></li>
-          
+          <li><a href="#" class="nav-link" onclick="switchPage('horarios', this)"> Horários</a></li>
+          <li><a href="#" class="nav-link" onclick="switchPage('passes', this)">Passagens</a></li>
+          <li><a href="#" class="nav-link" onclick="switchPage('recarga', this)">Recarga Online</a></li>
+          <li><a href="#" class="nav-link" onclick="switchPage('faleConosco', this)">Fale Conosco</a></li>
         </ul>
       </nav>
      
@@ -32,17 +40,9 @@
   <main>
     <!-- Página Inicial -->
     <section id="home" class="page active">
-      <h2>Informativos e Notícias</h2>
-      <div class="banner-grid">
-        <div class="card">
-          <h3>Informativo Bairro Faisqueira</h3>
-          <p>Confira os novos horários e rotas atendendo a região do Faisqueira a partir deste mês.</p>
-        </div>
-        <div class="card">
-          <h3>Atendimento de Passes</h3>
-          <p>Saiba onde adquirir ou renovar seus cartões de transporte urbano no centro da cidade.</p>
-        </div>
-      </div>
+      <h2>MAIS MOBILIDADE</h2>
+      <h2 class="green">PARA O SEU DIA A DIA</h2>
+    
     </section>
 
     <!-- Página Quadro de Horários -->
@@ -155,8 +155,9 @@
         </form>
       </div>
     </section>
-  </main>
-  <footer>
+    <section id="faleConosco" class="page">
+      <h2>Fale Conosco</h2>
+      <p style="margin-top: 1rem;">Entre em contato conosco para dúvidas, sugestões ou reclamações.</p>
     <h3>EXPRESSO PLANALTO TRANSPORTE E LOGISTICA LTDA
         08.352.952/0009-33</h3>
     <h4>Contatos</h4>
@@ -173,8 +174,10 @@
 
 
     <p>&copy; 2023 Transporte Urbano. Todos os direitos reservados.</p>
-  </footer>
+      </section>
 
+  </main>
+  
 
   <script src="script.js"></script>
 </body>
